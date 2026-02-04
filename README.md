@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# 🎮 Playo.io - Sports Social Network
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile app to connect sports players in Pakistan.
 
-## Get started
+## 📁 Simple Folder Structure
 
-1. Install dependencies
+```
+app/
+  _layout.tsx      → Main app wrapper
+  index.tsx        → Entry point (redirects users)
+  login.tsx        → Login/Signup screen
+  verify-otp.tsx   → OTP verification
+  reset-password.tsx → Password reset
+  setup.tsx        → Profile setup (2 steps only!)
+  (tabs)/          → Main app screens after login
+    home.tsx       → Home dashboard
+    explore.tsx    → Find games
 
+components/        → Reusable UI pieces
+constants/         → App colors & styles
+context/           → User authentication state
+lib/               → Backend connection (Appwrite)
+types/             → TypeScript types
+```
+
+## 🚀 App Flow (Easy to Understand!)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   1. LOGIN SCREEN (/login)                                  │
+│      └─ User creates account or signs in                    │
+│                     ↓                                       │
+│   2. OTP VERIFICATION (/verify-otp)                         │
+│      └─ Enter 6-digit code from email                       │
+│                     ↓                                       │
+│   3. PROFILE SETUP (/setup)                                 │
+│      └─ Step 1: Pick sports + skill level                   │
+│      └─ Step 2: Select city + bio                           │
+│                     ↓                                       │
+│   4. HOME (/(tabs)/home)                                    │
+│      └─ Main app dashboard                                  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## 🔧 Setup Instructions
+
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. Start the app
+2. **Create `.env` file** with your Appwrite credentials:
+   ```
+   EXPO_PUBLIC_APPWRITE_ENDPOINT=https://fra.cloud.appwrite.io/v1
+   EXPO_PUBLIC_APPWRITE_PROJECT_ID=your_project_id
+   EXPO_PUBLIC_APPWRITE_DATABASE_ID=your_database_id
+   EXPO_PUBLIC_APPWRITE_PROFILES_COLLECTION_ID=your_collection_id
+   ```
 
+3. **Run the app:**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Scan QR code** with Expo Go app on your phone
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📱 Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- ✅ Email/Password Login
+- ✅ OTP-based Login (no password needed!)
+- ✅ Password Reset via OTP
+- ✅ Profile Setup (Sports, Skill, City)
+- ✅ Dark Mode Support
+- ✅ Saves profile to Appwrite database
 
-## Get a fresh project
+## 🎯 Supported Sports
 
-When you're ready, run:
+- 🎾 Tennis
+- 🏸 Badminton
+- 🏏 Cricket
+- ⚽ Futsal
+- 🎾 Padel
 
-```bash
-npm run reset-project
-```
+## 🏙️ Supported Cities
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, Hyderabad, Gujranwala, Sialkot, Mardan
 
-## Learn more
+## 📞 Need Help?
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The code is organized simply:
+- **Screens** are in `app/` folder
+- **Styles** are in `constants/theme.ts`
+- **User data** is handled by `context/AuthContext.tsx`
+- **Backend calls** are in `lib/` folder
