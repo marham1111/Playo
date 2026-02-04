@@ -1,0 +1,19 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Trophy cup top -->
+  <path d="M30 50C30 42 35 35 48 32C55 30 85 30 92 32C105 35 110 42 110 50V55C110 60 105 65 100 67H40C35 65 30 60 30 55V50Z" fill="#F59E0B"/>
+  
+  <!-- Trophy bowl/cup -->
+  <ellipse cx="70" cy="67" rx="38" ry="33" fill="#F59E0B"/>
+  
+  <!-- Left handle -->
+  <path d="M40 55C22 55 12 65 12 78C12 88 20 95 30 95" stroke="#F59E0B" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Right handle -->
+  <path d="M100 55C118 55 128 65 128 78C128 88 120 95 110 95" stroke="#F59E0B" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Base stand -->
+  <rect x="58" y="100" width="24" height="14" fill="#D97706" rx="2"/>
+  
+  <!-- Base bottom -->
+  <rect x="50" y="114" width="40" height="10" fill="#F59E0B" rx="2"/>
+</svg>

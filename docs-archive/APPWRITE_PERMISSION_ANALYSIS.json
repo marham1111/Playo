@@ -1,0 +1,289 @@
+{
+  "analysis_date": "2026-01-23",
+  "app": "Playo.io",
+  "error_summary": {
+    "symptom": "No permissions provided for action 'create' (code 401 - user_unauthorized)",
+    "when_happens": "During profile document creation in onboarding (setup.tsx)",
+    "current_flow_broken_at": "ProfilesService.ensureProfile() → createProfile() → databases.createDocument()",
+    "error_code": 401,
+    "error_type": "user_unauthorized"
+  },
+  "root_cause_analysis": {
+    "primary_issue": "Collection-level permissions take precedence over document-level permissions",
+    "explanation": "In Appwrite, if a collection has NO permissions set, even document-level permissions passed to createDocument() are IGNORED. The collection acts as a gatekeeper.",
+    "why_document_permissions_fail": [
+      "You're passing document permissions: [Permission.read(Role.user(userId)), Permission.write(Role.user(userId)), ...]"{
+  "analysis_date": "2026-01-23",
+  "app": "Playo.io",
+  "error_summary": {
+    "symptom": "No permissions providg do  "app": "Playo.io",
+  "error_ss   "error_summary": on    "symptom": "No ??    "when_happens": "During profile document creation in onboarding (setup.tsx)",
+    "curre     "current_flow_broken_at": "ProfilesService.ensureProfile() → createProfileer    "error_code": 401,
+    "error_type": "user_unauthorized"
+  },
+  "root_cause_analysis": {
+    "primary_issue": p_    "error_type": "usf   },
+  "root_cause_analysis": {
+    rm  "io    "primary_issue": "Cole"    "explanation": "In Appwrite, if a collection has NO permissions set, even document-level permisp_    "why_document_permissions_fail": [
+      "You're passing document permissions: [Permission.read(Role.user(userId)), Permission.write(Role.user(userId)), ...]"{
+  "analysis_date"",
+      "You're passing document permised  "analysis_date": "2026-01-23",
+  "app": "Playo.io",
+  "error_summary": {
+    "symptom": "No permissions providg 
+    },
+     "app": "Playo.io",
+  "error_sco  "error_summary": at    "sympn perform ac  "error_ss   "error_summary": on    "symptom": "No ??    "w:     "curre     "current_flow_broken_at": "ProfilesService.ensureProfile() → createProfileer    "error_code": 401,
+    "error_type":  (    "error_type": "user_unauthorized"
+  },
+  "root_cause_analysis": {
+    "primary_issue": p_    "error_type": "us o  },
+  "root_cause_analysis": {
+     o  " a    "primary_issue": p_ low  "root_cause_analysis": {
+    rm  "io    "primarej    rm  "io    "primary_i":      "You're passing document permissions: [Permission.read(Role.user(userId)), Permission.write(Role.user(userId)), ...]"{
+  "analysis_date"",
+      "You're passing document e   "analysis_date"",
+      "You're passing document permised  "analysis_date": "2026-01-23",
+  "app": "Playo.io",
+  "error_sep      "You're pfic d  "app": "Playo.io",
+  "error_summary": {
+    "symptom": "No permissio ? "error_summary":  ?   "symptom": "No io    },
+     "app": "Playo. "4. This is a securi  "error_sco  "error_snt    "error_type":  (    "error_type": "user_unauthorized"
+  },
+  "root_cause_analysis": {
+    "primary_issue": p_    "error_type": "us o  },
+  "root_cause_analysis": {
+     o  " a    "primary_issue": p_ low  "root_cause_analysis":
+   },
+  "root_cause_analysis": {
+    "primary_issue": p_ e   "da    "primary_issue": p_  um  "root_cause_analysis": {
+     o  " a    "primar }     o  " a    "primary_ipp    rm  "io    "primarej    rm  "io    "primary_i":      "You'rll  "analysis_date"",
+      "You're passing document e   "analysis_date"",
+      "You're passing document permised  "analysis_date": "2026-01-23",
+  "app": "Playo.io",
+  "error [      "You're passon      "You're passing document permised  "analysis_s   "app": "Playo.io",
+  "error_sep      "You're pfic d  "app": "Playo.iL   "error_sep      " t  "error_summary": {
+    "symptom": "No permipermissi    "symptom": "No mi     "app": "Playo. "4. This is a securi  "error_sco  "error_snt    "error_tydo  },
+  "root_cause_analysis": {
+    "primary_issue": p_    "error_type": "us o  },
+  "root_cause_analysis": {
+     o  " t   "mi    "s)"
+      ],
+      "do  "root_cause_analysis": {
+     o  " a    "primarol     o  " a    "primary_i d   },
+  "root_cause_analysis": {
+    "primary_issue": p_ e   us  "r))    "primary_issue": p_ e c     o  " a    "primar }     o  " a    "primary_ipp    rm  "io    "primarej    rm  ow      "You're passing document e   "analysis_date"",
+      "You're passing document permised  "analysis_date": "2026-01-23",
+  "app": nl      "You're passing document permised  "analysis_    "app": "Playo.io",
+  "error [      "You're passon      "You're passi [  "error [      "Yous  "error_sep      "You're pfic d  "app": "Playo.iL   "error_sep      " t  "error_summary": {
+    "symp,
+    "symptom": "No permipermissi    "symptom": "No mi     "app": "Playo. "4. This is a secusi  "root_cause_analysis": {
+    "primary_issue": p_    "error_type": "us o  },
+  "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "primary_issue": p_ sio  "root_cause_analysis": {
+     o  " t   "mi    "t_     o  " t   "mi    "s)"ss      ],
+      "do  "rooea      "en     o  " a    "priissions",
+         "root_cause_analysis": {
+    "primary_issue": p_ e   t     "primary_issue": p_ edo      "You're passing document permised  "analysis_date": "2026-01-23",
+  "app": nl      "You're passing document permised  "analysis_    "app": "Playo.io",
+  "error [      "You're passon      "You'r    "app": nl      "You're passing document permised  "analysis_    "appo"  "error [      "You're passon      "You're passi [  "error [      "Yous  "error_se,     "symp,
+    "symptom": "No permipermissi    "symptom": "No mi     "app": "Playo. "4. This is a secusi  "root_cause_analysis": {
+    "primary_issue": p_    "errobu    "sympil    "primary_issue": p_    "error_type": "us o  },
+  "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": {
+     o  " t   "mi    "s      o  " t   "mi    "s)"ep    _I    "primary_issueAp     o  " t   "mi    "t_     o  " t   "mi    "s)"ss      ]e_      "do  "rooea      "en     o  " a    "priissions",
+   ES         "root_cause_analysis": {
+    "primary_issue"rs    "primary_issue": p_ e   t   /s  "app": nl      "You're passing dpdate_profile": "ProfilesService.updateOnboardingAnswers() updates the EXISTING profile with co  "error [      "You're passon      "You'r    "app": nl      "You're passing documeul    "symptom": "No permipermissi    "symptom": "No mi     "app": "Playo. "4. This is a secusi  "root_cause_analysis": {
+    "primary_issue": p_    "errobu    "sympil    "primary_issue": p_    "error_type": "us e     "primary_issue": p_    "errobu    "sympil    "primary_issue": p_    "error_type": "us o  },
+  "root_cause_analysis
+   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     o  " t   "mi    "s      o  " t   "mire   ES         "root_cause_analysis": {
+    "primary_issue"rs    "primary_issue": p_ e   t   /s  "app": nl      "You're passing dpdate_profile": "ProfilesService.updateOnboardingAnswers() upd A    "primary_issue"rs    "primary_iss "    "primary_issue": p_    "errobu    "sympil    "primary_issue": p_    "error_type": "us e     "primary_issue": p_    "errobu    "sympil    "primary_issue": p_    "error_type": "us o  },
+  "root_cause_analysis
+   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     o  " t   "mi    "s   ec  "root_cause_analysis
+   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     o  " t  
+    "root_cause_analyss"     o  " t   "mi    "s)"
+ p    _I    "prin)  "root_ro    "primary_issue"rs    "primary_issue": p_ e   t   /s  "app": nl      "You're passing dpdate_profile": "ProfilesService.updateOnboardingAnswers() upd A    "primary_issue"rs  o_  "root_cause_analysis
+   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     o  " t   "mi    "s   ec  "root_cause_analysis
+   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     '   "root_cause_analyset     o  " t   "mi    "s)"
+r     _I    "prin)  "root_ue   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "ro o     o  " t   "mi    "s)"
+in    _I    "prin)  "root_wo    "root_cause_analyss"     o  " t   "mi    "s)"
+ p    _I    "prin)  "root_ro    "primary_issue"rs    "primla p    _I    "prin)  "root_ro    "primary_issue"r_f   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     o  " t   "mi    "s   ec  "root_cause_analysis
+   "root_cause_analysis":  c     o  " t   "mi    "s)"
+
+     _I    "prin)  "root_s"   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "roer     o  " t   "mi    "s)"
+s     _I  CRUD",
+      "onbor     _I    "prin)  "root_ue   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)ection (collection ID: 'profiles', database ID: '12')"
+       _I    "prin)  "root_roin    _I    "prin)  "root_wo    "root_cause_analyss"     o  " t   "mi    "s)"
+ p    _I    "prin)  "root_ro    "primarns p    _I    "prin)  "root_ro    "primary_issue"rs    "primla p    _I    "prigA     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     o  " t   is    _I    "prin)  "root_on   "root_cause_analysis":  c     o  " t   "mi    "s)"
+
+     _I    "prin)  "root_s"   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I   at
+     _I    "prin)  "root_s"   "root_cause_analysis"e":     o  " t   "mi    "s)"
+    _I    "prin)  "root_cauav    _I    "prin)  "root_? s     _I  CRUD",
+      "onbor     _I    "prin)  "root_ue   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I  s      "onbor   rm     o  " t   "mi    "s)"
+    _I    "prin)  "root_cause_analysis"'     _I    "prin)  "root__a       _I    "prin)  "root_roin    _I    "prin)  "root_wo    "root_cause_analyss"     o  " t   "mi    "s)"
+ p    _I    "si p    _I    "prin)  "root_ro    "primarns p    _I    "prin)  "root_ro    "primary_issue"rs    "primla p  il    _I    "prin)  "root_cause_analysis": ex     o  " t   "mi    "s)"es    _I    "prin)  "root_si     o  " t   is    _I    "prin)  "root users to 
+     _I    "prin)  "root_s"   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I   at
+     _I    "prin)  "root_s"   "root_cause_analysis"e":     o  " t   "mi    "s)"
+    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+     _I    "priet    _I   at
+     _I    "se     _I         _I    "prin)  "root_cauav    _I    "prin)  "root_? s     _I  CRUD",
+      on      "onbor     _I    "prin)  "root_ue   "root_cause_analysis": {
+   er     o  " t   "mi    "s)"
+    _I  s      "onbor   rm     o  " t  ":    _I  s      "onbor   re    _I    "prin)  "root_cause_analysis"'     _I   ss p    _I    "si p    _I    "prin)  "root_ro    "primarns p    _I    "prin)  "root_ro    "primary_issue"rs    "primla p  il    _I    "prin)  "root_cause_analysis": ex     o ?      _I    "prin)  "root_s"   "root_cause_analysis": {
+     o  " t   "mi    "s)"
+    _I   at
+     _I    "prin)  "root_s"   "root_cause_analysis"e":     o  " t   "mi    "s)"
+    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+     _I    "priet    _I   at
+     _I"m     o  " t ": "Collection-level permissions (dashboard    _I   at
+     _I    ")"     _I   po    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+     _I    "priet    ou    _I   at
+     _I    "priet    _I   at
+  
+      _I   ca     _I    "se     _I      ib      on      "onbor     _I    "prin)  "root_ue   "root_cause_analysis": {
+   er     o  " t   "m?    er     o  " t   "mi    "s)"
+    _I  s      "onbor   rm     o  " t  ": fi    _I  s      "onbor   rm          o  " t   "mi    "s)"
+    _I   at
+     _I    "prin)  "root_s"   "root_cause_analysis"e":     o  " t   "mi    "s)"
+    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+     _I    "priet    _I   at
+     _I"m     o  " t ": "Collection-level permissions (dashboard    _I   at
+     _I    ")"     _I   po    _I    "prin)erm     o  " t   "mi    se    _I   at
+     _I/update     _e (own    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+     _I    "priet    g,    _I   at
+     _I    "priet    _I   at
+ ofi     _I          _I"m     o  " t ": "Coev     _I    ")"     _I   po    _I    "prin)erm     o  " t   "mi    "s)"
+   im    _I   at
+     _I    "priet    ou    _I   at
+     _I    "priet    _ie     _I   r      _I    "priet    _I   at
+  
+  "  
+      _I   ca     _I    tM di   er     o  " t   "m?    er     o  " t   "mi    "s)"
+    _I  s      "onbor   rm     o  " t  ": fi    _I  s      "fie    _I  s      "onbor   rm     o  " t  ": fi   tion_4"    _I   at
+     _I    "prin)  "root_s"   "root_cause_analysis"e":     o  " t   "mi    "s)"
+    _item     _I   {
+    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+     _I    "priet    er    _I   at
+     _I    "priet    _I   at
+  "d     _I   Ad     _I"m     o  " t ": "Core     _I    ")"     _I   po    _I    "prin)erm     o  " t   "mi    se    _Ick     _I/update     _e (own    _I    "prin)erm     o  " t   "mi    "s)"
+    _I  -    _I   at
+     _I    "priet    g,    _I   at
+     _I    "priet    _lo     _I   "d     _I    "priet    _I   at
+ ofiar ofi     _I          _I"m rea   im    _I   at
+     _I    "priet    ou    _I   atblocker": "NO - But needed to confirm fix works"
+    },
+    {
+        _I    "pri"M     _I    "priet    _ie     _I      
+  "  
+      _I   ca     _I    tM di   er     o  " t   "m?    prof    cr    _I  s      "onbor   rm     o  " t  ": fi    _I  s      "fie    _I  s      "onin     _I    "prin)  "root_s"   "root_cause_analysis"e":     o  " t   "mi    "s)"
+    _item     _I   {
+    _I    "prin)erm     o "A    _item     _I   {
+    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+ e    _I    "prin)ermds    _I   at
+     _I    "priet    er    _I  ",     _I   oc     _I    "priet    _I   at
+  "d ]  "d     _I   Ad     _I"m  s"    _I  -    _I   at
+     _I    "priet    g,    _I   at
+     _I    "priet    _lo     _I   "d     _I    "priet    _I   at
+ ofiar ofi     _I          _I"m rea   im    _I   at
+     _I    "prietsc     _I    "priet  cu     _I    "priet    _lo     _I  he ofiar ofi     _I          _I"m rea   im    _I   at
+     _I    yp     _I    "priet    ou    _I   atblocker": "NO - mi    },
+    {
+        _I    "pri"M     _I    "priet    _ie     _I      
+  "  
+    ,
+    { "    ":  "  
+      _I   ca     _I    tM di   er     o  " t   "mem    :     _item     _I   {
+    _I    "prin)erm     o "A    _item     _I   {
+    _I    "prin)erm     o  " t   "mi    "s)"
+    _I   at
+ e    _I    "prin)ermds    _I   at
+     _I    "priet    er    _I  ",     _I   oc     _I    "priet  "A    _I    "prin)ermon    _I    "prin)erm     o  " t   "mi    "s)"
+  da    _I   at
+ e    _I    "prin)ermds    _I  al e    _I  )"     _I    "priet    er    _I  ",ll  "d ]  "d     _I   Ad     _I"m  s"    _I  -    _I   at
+     _I    "prie
+      _I    "priet    g,    _I   at
+     _I    "priet   c     _I    "priet    _lo     _I     ofiar ofi     _I          _I"m rea   im    _I   at
+     _I    ns     _I    "prietsc     _I    "priet  cu     _I   "N     _I    yp     _I    "priet    ou    _I   atblocker": "NO - mi    },
+    {
+        _I    "pri"M     _I    "priet    _ie    -    {
+        _I    "pri"M     _I    "priet    _ie     _I      
+ anges":        "  
+    ,
+    { "    ":  "  
+      _I   ca     _I    tof    '     ec      _I   ca    t_    _I    "prin)erm     o "A    _item     _I   {
+"test_1_new_user": {
+        "    _I    "prin)erm     o  " t   "mi    "s)"
+  ,
+    _I   at
+ e    _I    "prin)ermds    _I     e    _I   o     _I    "priet    er    _I  ",4.  da    _I   at
+ e    _I    "prin)ermds    _I  al e    _I  )"     _I    "priet    er    _I  ",ll  "d ]  "d     _I   Ad     _I"m  sr  e    _I       }     _I    "prie
+      _I    "priet    g,    _I   at
+     _I    "priet   c     _I    "priet    _lo     _I     ofiar ofi     _I        to      _I  p onboa     _I    "priet   c      "expected     _I    ns     _I    "prietsc     _I    "priet  cu     _I   "N     _I    yp     _I    "priet    ou    _[
+    {
+        _I    "pri"M     _I    "priet    _ie    -    {
+        _I    "pri"M     _I    "priet    _ie     _I      
+ angget permission    ie        _I    "pri"M     _I    "priet    _ie     _I  cc anges":        "  
+    ,
+    { "    ":  "  
+      _I   eb    ,
+    { "    "mo    r_      _I   ca    it"test_1_new_user": {
+        "    _I    "prin)erm     o  " t   "mi    "s)"
+  ,
+    _I   at
+ e    _I    "pft        "    _I    _1  ,
+    _I   at
+ e    _I    "prin)ermds    _I     e        e    _I  t  e    _I    "prin)ermds    _I  al e    _I  )"     _I    "priet    er    _I  ",ll  "d ]  "d     "      _I    "priet    g,    _I   at
+     _I    "priet   c     _I    "priet    _lo     _I     ofiar ofi     _I        to      _I  p onboa     _I     c     _I    "priet   c     _I    "pca    {
+        _I    "pri"M     _I    "priet    _ie    -    {
+        _I    "pri"M     _I    "priet    _ie     _I      
+ angget permission    ie        _I    "pri"M     _I    "priet    _ie     _I  cc anges":        "  
+    ,
+    { "    ":  "   A    se        _I    "pri"M     _I    "priet    _ie     _I  e_ angget permission    ie        _I    "pri"M     _I    "e     ,
+    { "    ":  "  
+      _I   eb    ,
+    { "    "mo    r_      _I   ca    it"test_1_new_us u     h      _I   eb    r     { "    "mo    "        "    _I    "prin)erm     o  " t   "mi    "s)"
+  ,
+ i  ,
+    _I   at
+ e    _I    "pft        "    _I    _mi  io e    _I   c    _I   at
+ e    _I    "prin)ermds    ga e    _I  ,
+     _I    "priet   c     _I    "priet    _lo     _I     ofiar ofi     _I        to      _I  p onboa     _I     c     _I    "priet   c     _I    "pca    {
+        _I    "pri"M     _I  te        _I    "pri"M     _I    "priet    _ie    -    {
+        _I    "pri"M     _I    "priet    _ie     _I      
+ angget permission    ie        _I    "pre        _I    "pri"M     _I    "priet    _ie     _I  t_ angget permission    ie        _I    "pri"M y"
+  }
+}

@@ -1,0 +1,7 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lightning bolt -->
+  <path d="M70 10L48 60L70 60L50 130L85 80L65 80L85 10Z" fill="#F59E0B"/>
+  
+  <!-- Lightning bolt highlight/shine -->
+  <path d="M68 25L55 60L68 60L52 110L80 80L68 80L78 25Z" fill="#FBBF24" opacity="0.6"/>
+</svg>

@@ -1,112 +1,301 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { BorderRadius, Colors, Shadows, Spacing, Typography } from '@/constants/theme';
+import { useColorScheme } from '@/hooks/use-color-scheme';
+import { mockGames } from '@/lib/data/mockGames';
+import React, { useState } from 'react';
+import {
+    Alert,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
+export default function ExploreScreen() {
+  const colorScheme = useColorScheme();
+  const colors = Colors[colorScheme ?? 'light'];
+  const [selectedSport, setSelectedSport] = useState<string | null>(null);
 
-export default function TabTwoScreen() {
+  const styles = StyleSheet.create({
+    safeArea: {
+      flex: 1,
+      backgroundColor: colors.background,
+    },
+    header: {
+      paddingHorizontal: Spacing.lg,
+      paddingVertical: Spacing.md,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border,
+    },
+    headerTitle: {
+      ...Typography.headingMedium,
+      color: colors.text,
+      fontWeight: '800',
+      marginBottom: Spacing.md,
+      fontSize: 24,
+    },
+    headerSubtitle: {
+      ...Typography.bodySmall,
+      color: colors.textSecondary,
+      marginBottom: Spacing.sm,
+    },
+    sportFilters: {
+      flexDirection: 'row',
+      paddingHorizontal: Spacing.lg,
+      paddingVertical: Spacing.md,
+      gap: Spacing.md,
+    },
+    sportFilter: {
+      backgroundColor: colors.card,
+      borderRadius: BorderRadius.lg,
+      paddingHorizontal: Spacing.lg,
+      paddingVertical: Spacing.md,
+      borderWidth: 2,
+      borderColor: colors.border,
+    },
+    sportFilterActive: {
+      borderColor: colors.primary,
+      backgroundColor: colors.primary + '15',
+    },
+    sportFilterText: {
+      ...Typography.labelMedium,
+      color: colors.text,
+      fontWeight: '700',
+    },
+    content: {
+      flexGrow: 1,
+      paddingHorizontal: Spacing.lg,
+      paddingVertical: Spacing.md,
+    },
+    gameCard: {
+      backgroundColor: colors.card,
+      borderRadius: BorderRadius.lg,
+      paddingVertical: Spacing.lg,
+      paddingHorizontal: Spacing.lg,
+      marginBottom: Spacing.md,
+      borderWidth: 1,
+      borderColor: colors.border,
+      ...Shadows.sm,
+    },
+    gameHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
+      marginBottom: Spacing.md,
+    },
+    gameSport: {
+      ...Typography.titleLarge,
+      color: colors.text,
+      fontWeight: '800',
+      fontSize: 18,
+    },
+    gameStatus: {
+      backgroundColor: colors.primary + '20',
+      borderRadius: BorderRadius.lg,
+      paddingHorizontal: Spacing.md,
+      paddingVertical: Spacing.xs,
+      borderWidth: 1,
+      borderColor: colors.primary,
+    },
+    gameStatusText: {
+      ...Typography.labelSmall,
+      color: colors.primary,
+      fontWeight: '700',
+    },
+    gameTitle: {
+      ...Typography.titleMedium,
+      color: colors.text,
+      fontWeight: '700',
+      marginBottom: Spacing.sm,
+    },
+    gameHost: {
+      ...Typography.bodySmall,
+      color: colors.textSecondary,
+      marginBottom: Spacing.md,
+    },
+    gameDetails: {
+      gap: Spacing.sm,
+      marginBottom: Spacing.lg,
+    },
+    gameDetail: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: Spacing.md,
+    },
+    gameDetailIcon: {
+      fontSize: 16,
+      width: 20,
+    },
+    gameDetailText: {
+      ...Typography.bodySmall,
+      color: colors.text,
+      flex: 1,
+    },
+    gameFooter: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingVertical: Spacing.lg,
+      borderTopWidth: 1,
+      borderTopColor: colors.border,
+    },
+    slotsInfo: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: Spacing.md,
+    },
+    slotsBar: {
+      height: 6,
+      backgroundColor: colors.border,
+      borderRadius: 3,
+      overflow: 'hidden',
+      width: 60,
+    },
+    slotsBarFill: {
+      height: '100%',
+      backgroundColor: colors.primary,
+    },
+    slotsText: {
+      ...Typography.labelSmall,
+      color: colors.textSecondary,
+      fontWeight: '600',
+    },
+    joinButton: {
+      backgroundColor: colors.primary,
+      borderRadius: BorderRadius.lg,
+      paddingVertical: Spacing.md,
+      paddingHorizontal: Spacing.lg,
+    },
+    joinButtonText: {
+      ...Typography.labelLarge,
+      color: '#FFFFFF',
+      fontWeight: '700',
+    },
+    joinButtonDisabled: {
+      backgroundColor: colors.textSecondary,
+    },
+  });
+
+  const filteredGames = selectedSport
+    ? mockGames.filter(game => game.sport.includes(selectedSport))
+    : mockGames;
+
+  const uniqueSports = ['🎾', '⚽', '🏏', '🏸'];
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{
-            fontFamily: Fonts.rounded,
-          }}>
-          Explore
-        </ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image
-          source={require('@/assets/images/react-logo.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful{' '}
-          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            react-native-reanimated
-          </ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'} />
+
+      {/* Header */}
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>🏆 Explore Games</Text>
+        <Text style={styles.headerSubtitle}>
+          Find and join games near you
+        </Text>
+      </View>
+
+      {/* Sport Filters */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.sportFilters}
+      >
+        <TouchableOpacity
+          style={[styles.sportFilter, !selectedSport && styles.sportFilterActive]}
+          onPress={() => setSelectedSport(null)}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.sportFilterText}>All Sports</Text>
+        </TouchableOpacity>
+        {uniqueSports.map(sport => (
+          <TouchableOpacity
+            key={sport}
+            style={[styles.sportFilter, selectedSport === sport && styles.sportFilterActive]}
+            onPress={() => setSelectedSport(sport)}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.sportFilterText}>{sport}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+
+      {/* Games List */}
+      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        {filteredGames.map(game => {
+          const availableSlots = game.slots.total - game.slots.filled;
+          return (
+          <View key={game.id} style={styles.gameCard}>
+            {/* Header */}
+            <View style={styles.gameHeader}>
+              <Text style={styles.gameSport}>{game.sport}</Text>
+              <View style={styles.gameStatus}>
+                <Text style={styles.gameStatusText}>
+                  {availableSlots === 0 ? '🔴 Full' : '🟢 Filling'}
+                </Text>
+              </View>
+            </View>
+
+            {/* Title */}
+            <Text style={styles.gameTitle}>{game.title}</Text>
+            <Text style={styles.gameHost}>Hosted by {game.host}</Text>
+
+            {/* Details */}
+            <View style={styles.gameDetails}>
+              <View style={styles.gameDetail}>
+                <Text style={styles.gameDetailIcon}>📅</Text>
+                <Text style={styles.gameDetailText}>{game.date}</Text>
+              </View>
+              <View style={styles.gameDetail}>
+                <Text style={styles.gameDetailIcon}>📍</Text>
+                <Text style={styles.gameDetailText}>{game.location}</Text>
+              </View>
+              <View style={styles.gameDetail}>
+                <Text style={styles.gameDetailIcon}>⭐</Text>
+                <Text style={styles.gameDetailText}>{game.skillLevel} Level</Text>
+              </View>
+            </View>
+
+            {/* Footer */}
+            <View style={styles.gameFooter}>
+              <View style={styles.slotsInfo}>
+                <View style={styles.slotsBar}>
+                  <View
+                    style={[
+                      styles.slotsBarFill,
+                      {
+                        width: `${(game.slots.filled / game.slots.total) * 100}%`,
+                      },
+                    ]}
+                  />
+                </View>
+                <Text style={styles.slotsText}>
+                  {availableSlots} of {game.slots.total} slots
+                </Text>
+              </View>
+
+              <TouchableOpacity
+                style={[styles.joinButton, availableSlots === 0 && styles.joinButtonDisabled]}
+                onPress={() => {
+                  if (availableSlots > 0) {
+                    Alert.alert('Join Game', `Joined ${game.title}!`);
+                  } else {
+                    Alert.alert('Game Full', 'This game is currently full');
+                  }
+                }}
+                disabled={availableSlots === 0}
+                activeOpacity={0.8}
+              >
+                <Text style={styles.joinButtonText}>
+                  {availableSlots > 0 ? 'Join' : 'Full'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        );
         })}
-      </Collapsible>
-    </ParallaxScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-});

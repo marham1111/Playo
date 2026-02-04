@@ -1,0 +1,22 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left person head -->
+  <circle cx="40" cy="35" r="12" fill="#1E40AF"/>
+  
+  <!-- Right person head -->
+  <circle cx="100" cy="35" r="12" fill="#1E40AF"/>
+  
+  <!-- Left person body -->
+  <path d="M32 50C32 50 28 50 28 60L28 85C28 90 32 95 40 95C48 95 52 90 52 85L52 60C52 50 48 50 48 50" fill="#1E40AF"/>
+  
+  <!-- Right person body -->
+  <path d="M108 50C108 50 112 50 112 60L112 85C112 90 108 95 100 95C92 95 88 90 88 85L88 60C88 50 92 50 92 50" fill="#1E40AF"/>
+  
+  <!-- Connection/bond line -->
+  <rect x="48" y="62" width="44" height="8" fill="#1E40AF" rx="4"/>
+  
+  <!-- Left shoulder line -->
+  <line x1="40" y1="50" x2="48" y2="62" stroke="#1E40AF" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Right shoulder line -->
+  <line x1="100" y1="50" x2="92" y2="62" stroke="#1E40AF" stroke-width="6" stroke-linecap="round"/>
+</svg>
